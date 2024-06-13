@@ -1,0 +1,9 @@
+type FeeCollected @entity(immutable: true) {
+  id: Bytes!
+  eventId: String! # string
+  token: Bytes! # address
+  amount: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}

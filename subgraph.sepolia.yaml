@@ -1,0 +1,26 @@
+specVersion: 1.0.0
+indexerHints:
+  prune: auto
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum
+    name: LemonadePaymentConfigRegistry
+    network: sepolia
+    source:
+      address: "0x47ec12455B74f6388AD1289DD4024378E833B916"
+      abi: LemonadePaymentConfigRegistry
+      startBlock: 6098590
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - FeeCollected
+      abis:
+        - name: LemonadePaymentConfigRegistry
+          file: ./abis/LemonadePaymentConfigRegistry.json
+      eventHandlers:
+        - event: FeeCollected(string,address,uint256)
+          handler: handleFeeCollected
+      file: ./src/fee.ts

@@ -1,0 +1,17 @@
+{
+  "name": "lemonade-payment-config-registry",
+  "scripts": {
+    "manifest": "sh scripts/manifest.sh",
+    "codegen": "graph codegen",
+    "build": "graph build",
+    "deploy:sepolia": "yarn manifest sepolia && graph deploy --node https://api.studio.thegraph.com/deploy/ payment-config-sepolia",
+    "deploy:base-sepplia": "yarn manifest base-sepolia && graph deploy --node https://api.studio.thegraph.com/deploy/ payment-config-base-sepolia"
+  },
+  "dependencies": {
+    "@graphprotocol/graph-cli": "0.74.0",
+    "@graphprotocol/graph-ts": "0.32.0"
+  },
+  "devDependencies": {
+    "matchstick-as": "0.5.0"
+  }
+}
